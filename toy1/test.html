@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test d.js</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script src="d.js"></script>
+    <script>
+        console.log(d());
+        console.log(d(''));
+        console.log(d('body'));
+        console.log(d('<p>hello</p><p>world!</p>'));
+        console.log(d(document.body));
+        console.log(d([document.body,document.body]));
+        console.log(d(document.body.children));
+        console.log(d(d('body')));
+        // d().html()
+        console.log(d('ul li:first-child').html('one'));
+        console.log(d('ul li:first-child').html()==='one');
+        // d().text()
+        console.log(d('ul li:last-child').text('three'));
+        console.log(d('ul li:last-child').text()==='three');
+        // d().append()
+        d('ul').append('<li>4</li>');
+        d('ul').append(document.createElement('li'));
+        d('ul').append(d('li:first-child'));
+    </script>
+</body>
+</html>
